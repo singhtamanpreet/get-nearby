@@ -1,15 +1,34 @@
-import React from "react";
-import { Card, Button, Row, Col } from "antd";
+import React, { useState, useEffect } from "react";
+import { Card, Button, Row, Col, Modal, InputNumber } from "antd";
 
 export const Homepage = () => {
+  const [pincode, setPincode] = useState(0);
+  const [locationClicked, setLocationClicked] = useState(false);
+
   return (
     <div>
       <div style={{ margin: "0 50px" }}>
         <div className="site-layout-content gr-layout-content">
           <div>
-            <Button type="primary" block>
-              CHOOSE YOUR LOCATION
-            </Button>
+            <Modal
+              title="Enter your pincode"
+              visible={locationClicked}
+              onOk={() => setLocationClicked(false)}
+              onCancel={() => setLocationClicked(false)}
+              okText="Submit"
+              cancelButtonProps={{ hidden: true }}
+            >
+              <InputNumber
+                placeholder="560095"
+                onClick={(event) => setPincode(event.target.value)}
+                style={{width : '50%'}}
+              />
+            </Modal>
+            <Button type="primary" block
+              onClick={() => setLocationClicked(true)}
+            >
+              CHOOSE YOUR PINCODE
+              </Button>
             <br />
             <br />
             <div>
@@ -17,7 +36,6 @@ export const Homepage = () => {
                 <Col>
                   <Card hoverable sm={6} style={{ width: 150, height: 150 }}>
                     <p>Medical Stores</p>
-                    <p>59 stores</p>
                   </Card>
                 </Col>
                 <Col>
