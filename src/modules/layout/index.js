@@ -18,10 +18,26 @@ export const GRLayout = (props) => {
         <Content style={{ padding: "0 50px" }}>
           <div className="site-layout-content gr-layout-content">
             <div>
-            <Button type="primary" block style={{ marginTop: '100px', marginBottom: '100px'}}>
+            <Button type="primary" block style={{ marginTop: '30px', marginBottom: '30px'}}>
                 CHOOSE YOUR LOCATION
            </Button>
-           <Card title="Precautions for COVID-19" bordered={false} style={{ width: 300, background: 'orange' }}>
+           <div>
+           <Row className="main-row">
+           <Card sm={6} style={{ width: 150, height: 150 }} >
+             <p>Medical Stores</p>
+             <p>59 stores</p>
+           </Card>
+           <Card sm={6} style={{ width: 150, height: 150 }}>
+             <p>Medical Stores</p>
+             <p>9 stores</p>
+           </Card>
+           <Card sm={6} style={{ width: 150, height: 150 }} >
+             <p>Vegetable stores</p>
+             <p>19 stores</p>
+           </Card>
+           </Row>
+           </div>
+           <Card title="Precautions for COVID-19" bordered={false} style={{ width: 300, background: 'orange', marginTop: '50px' }}>
                <p>Don’t go out until its really necessary</p>
                <p>Wash your hands regularly with soap</p>
                <p>Maintain distance from other</p>
