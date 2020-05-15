@@ -1,14 +1,27 @@
 import React from "react";
-import { Menu } from "antd";
+import LOGO from "../../globals/assets/images/logo.png";
+import { Menu, Dropdown, Avatar, Input } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 export const RenderHeader = () => {
+  const menu = (
+    <Menu>
+      <Menu.Item onClick={() => {}}>Profile</Menu.Item>
+    </Menu>
+  );
   return (
-    <div>
-      <Menu mode="horizontal">
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-      </Menu>
+    <div className="gr-layout-header">
+      <div style={{ marginLeft: "10px" }}>
+        <img className="logo" src={LOGO} alt="LOGO" />
+      </div>
+      <Input.Group compact style={{ display: "inline", width: "180px" }}>
+        <Input.Search defaultValue="Search" />
+      </Input.Group>
+      <div style={{ marginRight: "10px" }}>
+        <Dropdown overlay={menu} placement="bottomLeft">
+          <Avatar icon={<UserOutlined />} />
+        </Dropdown>
+      </div>
     </div>
   );
 };
