@@ -1,7 +1,7 @@
 @import "../utils/variables";
 
 .gr-layout-content {
-    height: calc(100vh - 202px);
+    margin: 20px 0;
     .custom-card {
         .ant-card-head {
             background: $gray-D6;
@@ -24,4 +24,8 @@
 
 .layout-footer {
     background: $gray-D6;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

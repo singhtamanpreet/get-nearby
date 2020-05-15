@@ -3,14 +3,15 @@ import { Switch, Route } from "react-router-dom";
 import { HOMEPAGE } from "../globals/config/urlMapping";
 import { Homepage } from "../modules/homepage";
 
-export const ChiefRouter = ({ history }) => {
+export const ChiefRouter = () => {
   return (
     <div>
       <Switch>
         <Route
+          exact
           path="/"
-          render={() => {
-            console.log("coming", history);
+          render={(props) => {
+            return props.history.push(HOMEPAGE);
           }}
         />
         <Route exact path={HOMEPAGE} component={Homepage} />
