@@ -1,7 +1,12 @@
 import React from "react";
-import { Card, Button, Row, Col } from "antd";
+import { Card, Button } from "antd";
+import { FEATURE_TYPES, FEATURE_KEYS } from "../../globals/config/constants";
+import { CustomCard } from "../../globals/partials/atoms/CustomCard";
+import ATM from "../../globals/assets/images/atm.png";
+import MEDICAL from "../../globals/assets/images/medical.png";
+import GROCERY from "../../globals/assets/images/grocery.png";
 
-export const Homepage = () => {
+export const Homepage = (props) => {
   return (
     <div>
       <div style={{ margin: "0 50px" }}>
@@ -12,28 +17,19 @@ export const Homepage = () => {
             </Button>
             <br />
             <br />
-            <div>
-              <Row className="main-row" gutter={[12, 12]}>
-                <Col>
-                  <Card hoverable sm={6} style={{ width: 150, height: 150 }}>
-                    <p>Medical Stores</p>
-                    <p>59 stores</p>
-                  </Card>
-                </Col>
-                <Col>
-                  <Card hoverable sm={6} style={{ width: 150, height: 150 }}>
-                    <p>Medical Stores</p>
-                    <p>9 stores</p>
-                  </Card>
-                </Col>
-                <Col>
-                  <Card hoverable sm={6} style={{ width: 150, height: 150 }}>
-                    <p>Vegetable stores</p>
-                    <p>19 stores</p>
-                  </Card>
-                </Col>
-              </Row>
-            </div>
+            {FEATURE_TYPES.map((item) => {
+              const name = item.name;
+              const key = item.key;
+              const icon = getIconSource(key);
+              return (
+                <CustomCard
+                  key={key}
+                  icon={<img className="icon" src={icon} alt={key} />}
+                >
+                  {name}
+                </CustomCard>
+              );
+            })}
             <br />
             <br />
             <Card
@@ -52,4 +48,18 @@ export const Homepage = () => {
       </div>
     </div>
   );
+};
+
+const getIconSource = (key) => {
+  console.log(key, FEATURE_KEYS.medical);
+  switch (key) {
+    case FEATURE_KEYS.atm:
+      return ATM;
+    case FEATURE_KEYS.medical:
+      return MEDICAL;
+    case FEATURE_KEYS.grocery:
+      return GROCERY;
+    default:
+      return null;
+  }
 };

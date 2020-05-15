@@ -1,0 +1,10 @@
+@import "../utils/variables";
+.custom-card {
+    margin: $card-margin;
+    border-radius: $card-border-radius;
+    box-shadow: $card-box-shadow;
+    cursor: pointer;
+    .ant-card-head {
+        background: $gray-D6;
+    }
+}

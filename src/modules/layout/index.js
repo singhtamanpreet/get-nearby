@@ -8,16 +8,14 @@ const { Content } = Layout;
 
 export const GRLayout = (props) => {
   return (
-    <div>
-      <Layout className="layout">
-        <RenderHeader />
-        <Content>
-          <ChiefRouter />
-          <div className="layout-footer">
-            <RenderFooter />
-          </div>
-        </Content>
-      </Layout>
-    </div>
+    <Layout className="layout">
+      <RenderHeader />
+      <Content className="gr-layout-content">
+        <ChiefRouter />
+        <div className="layout-footer">
+          <RenderFooter />
+        </div>
+      </Content>
+    </Layout>
   );
 };
