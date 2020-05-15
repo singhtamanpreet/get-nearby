@@ -1,10 +1,12 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+
 import { HOMEPAGE, FEATURE } from "../globals/config/urlMapping";
 import { Homepage } from "../modules/homepage";
 import { Feature } from "../modules/feature";
 
-export const ChiefRouter = () => {
+const ChiefRouter = (props) => {
   return (
     <div>
       <Switch>
@@ -16,8 +18,15 @@ export const ChiefRouter = () => {
           }}
         />
         <Route exact path={HOMEPAGE} component={Homepage} />
-        <Route exact path={FEATURE} component={Feature} />
+        <Route
+          exact
+          key={props.location.key}
+          path={FEATURE}
+          component={Feature}
+        />
       </Switch>
     </div>
   );
 };
+
+export default withRouter(ChiefRouter);

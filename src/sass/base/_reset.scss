@@ -1,5 +1,11 @@
 @import "../utils/variables";
 
+html {
+  font-family: $Roboto !important;
+  font-style: normal;
+  font-size: 16px;
+}
+
 body {
   margin: 0;
   font-family: Roboto;
@@ -8,6 +14,60 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@media screen and (max-width: 840px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 2.583rem;
+  line-height: 175%;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.875rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-family: $Roboto;
+  line-height: 150%;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  line-height: 175%;
+  font-size: 0.875rem;
+}
+
+p {
+  line-height: 175%;
+  line-height: 200%;
+  font-size: 0.875rem;
+}
+
+pre {
+  font-family: inherit;
+  white-space: pre-wrap;
+  line-height: 200%;
+  font-size: 0.875rem;
 }
 
 ::-webkit-scrollbar {

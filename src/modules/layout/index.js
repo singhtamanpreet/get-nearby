@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "antd";
 import RenderHeader from "./Header";
-import { ChiefRouter } from "../../router";
+import ChiefRouter from "../../router";
 import { RenderFooter } from "./Footer";
 
 const { Content } = Layout;

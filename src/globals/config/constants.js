@@ -20,3 +20,10 @@ export const FEATURE_TYPES = [
     active: false,
   },
 ];
+
+export const FEATURE_HEADER_MAPPING = {
+  grocery: "Groceries",
+  medical: "Medical",
+  atm: "ATM",
+  search: "Search",
+};
