@@ -11,9 +11,6 @@ export const ChiefRouter = ({ history }) => {
           path="/"
           render={() => {
             console.log("coming", history);
-            {
-              /* history.push(HOMEPAGE); */
-            }
           }}
         />
         <Route exact path={HOMEPAGE} component={Homepage} />

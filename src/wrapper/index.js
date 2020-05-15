@@ -6,7 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 const Wrapper = () => {
   return (
     <BrowserRouter>
-      <GRLayout />
+      <div className="main-wrapper">
+        <GRLayout />
+      </div>
     </BrowserRouter>
   );
 };
