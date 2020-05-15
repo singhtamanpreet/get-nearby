@@ -21,11 +21,13 @@ export const Homepage = (props) => {
           const name = item.name;
           const key = item.key;
           const icon = getIconSource(key);
+          const isActive = item.active;
           return (
             <CustomCard
               onClick={() => history.push(FEATURE)}
               key={key}
               icon={<img className="icon" src={icon} alt={key} />}
+              disabled={!isActive}
             >
               {name}
             </CustomCard>

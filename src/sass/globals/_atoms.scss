@@ -8,3 +8,8 @@
         background: $gray-D6;
     }
 }
+
+.custom-card-disabled {
+    opacity: $card-disabled-opacity;
+    pointer-events: none;
+}
