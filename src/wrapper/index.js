@@ -1,14 +1,13 @@
 import React from "react";
-import logo from "../globals/assets/images/logo.svg";
+import "antd/dist/antd.css";
+import { GRLayout } from "../modules/layout";
+import { BrowserRouter } from "react-router-dom";
 
 const Wrapper = () => {
   return (
-    <div className="Wrapper">
-      <header className="Wrapper-header">
-        <img src={logo} className="Wrapper-logo" alt="logo" />
-        <h1>Welcome to Get-nearby React Shell</h1>
-      </header>
-    </div>
+    <BrowserRouter>
+      <GRLayout />
+    </BrowserRouter>
   );
 };
 
