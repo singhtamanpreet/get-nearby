@@ -3,7 +3,6 @@ import { Card, Row, Col } from "antd";
 
 export const CustomCard = (props) => {
   const { icon, children, disabled } = props;
-  console.log(disabled);
   const span = icon ? 20 : 24;
   return (
     <Card
