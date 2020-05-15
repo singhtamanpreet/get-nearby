@@ -24,7 +24,12 @@ const RenderHeader = (props) => {
   return (
     <div className="gr-layout-header">
       <div style={{ marginLeft: "10px" }}>
-        <img className="logo" src={LOGO} alt="LOGO" />
+        <img
+          className="logo"
+          onClick={() => history.push("/")}
+          src={LOGO}
+          alt="LOGO"
+        />
       </div>
       <Input.Group compact style={{ display: "inline", width: "180px" }}>
         <Input.Search onSearch={handleSearch} placeholder="Search" />
