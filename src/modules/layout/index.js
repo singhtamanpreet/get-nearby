@@ -12,10 +12,10 @@ export const GRLayout = (props) => {
       <RenderHeader />
       <Content className="gr-layout-content">
         <ChiefRouter />
-        <div className="layout-footer">
-          <RenderFooter />
-        </div>
       </Content>
+      <div className="layout-footer">
+        <RenderFooter />
+      </div>
     </Layout>
   );
 };
