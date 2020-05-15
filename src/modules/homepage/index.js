@@ -1,5 +1,5 @@
-import React,{ useState, useEffect } from "react";
-import { Card, Button,Modal, InputNumber, Row, Col } from "antd";
+import React, { useState } from "react";
+import { Card, Button, Modal, InputNumber } from "antd";
 import { FEATURE_TYPES, FEATURE_KEYS } from "../../globals/config/constants";
 import { CustomCard } from "../../globals/partials/atoms/CustomCard";
 import ATM from "../../globals/assets/images/atm.png";
@@ -16,24 +16,22 @@ export const Homepage = (props) => {
     <div>
       <div>
         <Modal
-              title="Enter your pincode"
-              visible={locationClicked}
-              onOk={() => setLocationClicked(false)}
-              onCancel={() => setLocationClicked(false)}
-              okText="Submit"
-              cancelButtonProps={{ hidden: true }}
-            >
-              <InputNumber
-                placeholder="560095"
-                onClick={(event) => setPincode(event.target.value)}
-                style={{width : '50%'}}
-              />
-            </Modal>
-            <Button type="primary" block
-              onClick={() => setLocationClicked(true)}
-            >
-              CHOOSE YOUR PINCODE
-              </Button>
+          title="Enter your pincode"
+          visible={locationClicked}
+          onOk={() => setLocationClicked(false)}
+          onCancel={() => setLocationClicked(false)}
+          okText="Submit"
+          cancelButtonProps={{ hidden: true }}
+        >
+          <InputNumber
+            placeholder="560095"
+            onClick={(event) => setPincode(event.target.value)}
+            style={{ width: "50%" }}
+          />
+        </Modal>
+        <Button type="primary" block onClick={() => setLocationClicked(true)}>
+          CHOOSE YOUR PINCODE
+        </Button>
         <br />
         <br />
         {FEATURE_TYPES.map((item) => {
