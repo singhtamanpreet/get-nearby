@@ -8,6 +8,8 @@ $gin-grey: #edf3ef !default;
 $white: #fff !default;
 $black: #000 !default;
 $teal: #3c7586 !default;
+$red: #ff0000 !default;
+$orange: #ffa500 !default;
 
 //Create greyscale
 $gray-22: #222222 !default;
@@ -33,4 +35,6 @@ $card-disabled-opacity: 0.5;
 
 // Feature module
 $feature-zone-line-border-radius: 2px;
-$feature-zone-line-border: 2px solid $viridian-green;
+$feature-zone-line-border-green: 2px solid $viridian-green;
+$feature-zone-line-border-red: 2px solid $red;
+$feature-zone-line-border-orange: 2px solid $orange;
