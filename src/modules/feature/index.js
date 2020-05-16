@@ -5,7 +5,7 @@ import OPEN from "../../globals/assets/images/open-store.png";
 import CLOSE from "../../globals/assets/images/close-store.png";
 import { FEATURE_HEADER_MAPPING } from "../../globals/config/constants";
 import { CustomCard } from "../../globals/partials/atoms/CustomCard";
-import { Empty } from "antd";
+import { Empty, Row, Col } from "antd";
 import { DETAILS } from "../../globals/config/urlMapping";
 
 export const Feature = (props) => {
@@ -70,6 +70,13 @@ export const Feature = (props) => {
               <p>
                 Address: {location}, {address}
               </p>
+              <h4>Zone:</h4>
+              <Row type="flex" align="middle">
+                <Col span={8}>Green:</Col>
+                <Col span={12}>
+                  <div className="green-line" />
+                </Col>
+              </Row>
             </div>
           </CustomCard>
         );
