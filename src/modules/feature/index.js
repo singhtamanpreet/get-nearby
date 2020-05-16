@@ -29,7 +29,7 @@ export const Feature = (props) => {
         }
       );
     }
-  }, []);
+  }, [isSearch, params.param]);
 
   return (
     <div>
