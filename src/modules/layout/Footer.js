@@ -3,5 +3,10 @@ import { Typography } from "antd";
 const { Text } = Typography;
 
 export const RenderFooter = () => {
-  return <Text className="text-about"> © GetNearBy, 2020</Text>;
+  return (
+    <Text style={{ color: "white" }} className="text-about">
+      {" "}
+      © GetNearBy, 2020
+    </Text>
+  );
 };

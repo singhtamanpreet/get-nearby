@@ -15,12 +15,12 @@ export const Feature = (props) => {
   const isSearch = params.feature === "search" ? true : false;
   useEffect(() => {
     if (!isSearch) {
-      Axios.get(`http://localhost:8080/store/getAll?pin=${params.param}`).then(
-        (res) => {
-          const data = res.data;
-          setdata(data);
-        }
-      );
+      Axios.get(
+        `http://localhost:8080/store/getAll?pin=${params.param}&&storeType=${params.feature}`
+      ).then((res) => {
+        const data = res.data;
+        setdata(data);
+      });
     } else {
       Axios.get(`http://localhost:8080/store/search/${params.param}`).then(
         (res) => {
@@ -29,6 +29,7 @@ export const Feature = (props) => {
         }
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -37,18 +38,20 @@ export const Feature = (props) => {
       {data.map((item) => {
         const id = item._id;
         let isOpen = item.status === "open" ? true : false;
+        let status = item.status;
         if (isSearch) {
           const itemSearched = params.param;
           const itemArray = item.items.filter(
             (subItem) => subItem.name === itemSearched
           );
           if (itemArray.length > 0) {
+            status = itemArray[0].status;
             isOpen = itemArray[0].status === "available" ? true : false;
           } else {
             isOpen = false;
           }
         }
-        const { distance, address, location, storeType } = item;
+        const { distance, address, location, storeName } = item;
         const icon = isOpen ? OPEN : CLOSE;
 
         return (
@@ -61,11 +64,20 @@ export const Feature = (props) => {
               )
             }
             key={id}
-            icon={<img className="icon" src={icon} alt={item.status} />}
+            icon={
+              <Row type="flex" justify="center">
+                <img className="icon" src={icon} alt={item.status} />
+                <Col span={24}>
+                  <p style={{ display: "flex", justifyContent: "center" }}>
+                    {status}
+                  </p>
+                </Col>
+              </Row>
+            }
             disabled={!isOpen}
           >
             <div>
-              <h4>{storeType}</h4>
+              <h4>{storeName}</h4>
               <h5>Distance: {distance}</h5>
               <p>
                 Address: {location}, {address}
@@ -83,10 +95,9 @@ export const Feature = (props) => {
       })}
       {data.length === 0 && (
         <div>
-          <br />
-          <br />
-          <br />
-          <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+          <CustomCard>
+            <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+          </CustomCard>
         </div>
       )}
     </div>
