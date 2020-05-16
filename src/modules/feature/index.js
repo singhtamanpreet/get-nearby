@@ -6,9 +6,10 @@ import CLOSE from "../../globals/assets/images/close-store.png";
 import { FEATURE_HEADER_MAPPING } from "../../globals/config/constants";
 import { CustomCard } from "../../globals/partials/atoms/CustomCard";
 import { Empty } from "antd";
+import { DETAILS } from "../../globals/config/urlMapping";
 
 export const Feature = (props) => {
-  const { match } = props;
+  const { match, history } = props;
   const { params } = match;
   const [data, setdata] = useState([]);
   const isSearch = params.feature === "search" ? true : false;
@@ -52,6 +53,13 @@ export const Feature = (props) => {
 
         return (
           <CustomCard
+            onClick={() =>
+              history.push(
+                DETAILS.replace(":feature", params.feature)
+                  .replace(":param", params.param)
+                  .replace(":id", id)
+              )
+            }
             key={id}
             icon={<img className="icon" src={icon} alt={item.status} />}
             disabled={!isOpen}
