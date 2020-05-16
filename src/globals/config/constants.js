@@ -1,6 +1,6 @@
 export const FEATURE_KEYS = {
   grocery: "grocery",
-  medical: "medical",
+  medicine: "medicine",
   atm: "atm",
 };
 export const FEATURE_TYPES = [
@@ -10,9 +10,9 @@ export const FEATURE_TYPES = [
     active: true,
   },
   {
-    name: "Medical Stores",
-    key: FEATURE_KEYS.medical,
-    active: false,
+    name: "Medicine Stores",
+    key: FEATURE_KEYS.medicine,
+    active: true,
   },
   {
     name: "ATM",
@@ -23,7 +23,7 @@ export const FEATURE_TYPES = [
 
 export const FEATURE_HEADER_MAPPING = {
   grocery: "Groceries",
-  medical: "Medical",
+  medicine: "Medicine",
   atm: "ATM",
   search: "Search",
 };

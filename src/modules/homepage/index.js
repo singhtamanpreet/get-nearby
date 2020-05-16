@@ -3,13 +3,13 @@ import { Card, Button, Modal, InputNumber, notification } from "antd";
 import { FEATURE_TYPES, FEATURE_KEYS } from "../../globals/config/constants";
 import { CustomCard } from "../../globals/partials/atoms/CustomCard";
 import ATM from "../../globals/assets/images/atm.png";
-import MEDICAL from "../../globals/assets/images/medical.png";
+import MEDICINE from "../../globals/assets/images/medical.png";
 import GROCERY from "../../globals/assets/images/grocery.png";
 import { FEATURE } from "../../globals/config/urlMapping";
 import { debounce } from "lodash";
 
 export const Homepage = (props) => {
-  const [pincode, setPincode] = useState(0);
+  const [pincode, setPincode] = useState();
   const [locationClicked, setLocationClicked] = useState(false);
 
   const { history } = props;
@@ -32,7 +32,7 @@ export const Homepage = (props) => {
         centered={true}
       >
         <InputNumber
-          placeholder="560095"
+          placeholder="560090"
           onChange={(value) => setPincode(value)}
           value={pincode}
           style={{ width: "50%" }}
@@ -56,7 +56,7 @@ export const Homepage = (props) => {
                   FEATURE.replace(":feature", key).replace(":param", pincode)
                 );
               } else {
-                handleErrorNotification();
+                // handleErrorNotification();
                 setLocationClicked(true);
               }
             }}
@@ -88,8 +88,8 @@ const getIconSource = (key) => {
   switch (key) {
     case FEATURE_KEYS.atm:
       return ATM;
-    case FEATURE_KEYS.medical:
-      return MEDICAL;
+    case FEATURE_KEYS.medicine:
+      return MEDICINE;
     case FEATURE_KEYS.grocery:
       return GROCERY;
     default:
