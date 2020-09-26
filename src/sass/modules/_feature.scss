@@ -1,0 +1,14 @@
+@import "../utils/variables";
+
+.green-line {
+    border: $feature-zone-line-border-green;
+    border-radius: $feature-zone-line-border-radius;
+}
+.orange-line {
+    border: $feature-zone-line-border-orange;
+    border-radius: $feature-zone-line-border-radius;
+}
+.red-line {
+    border: $feature-zone-line-border-red;
+    border-radius: $feature-zone-line-border-radius;
+}
